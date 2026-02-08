@@ -348,6 +348,11 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
+                  <a href="/legal" className="hover:text-primary transition-colors">
+                    Legal
+                  </a>
+                </li>
+                <li>
                   <a href="#" className="hover:text-primary transition-colors">
                     Documentation
                   </a>

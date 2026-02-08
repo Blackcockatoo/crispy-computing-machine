@@ -1,0 +1,11 @@
+{
+  "installCommand": "pnpm --dir metapet-veil-website install",
+  "buildCommand": "pnpm --dir metapet-veil-website build:client",
+  "outputDirectory": "metapet-veil-website/dist/public",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
