@@ -1,5 +1,7 @@
+import LegalNotice from "@/components/LegalNotice";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import Legal from "@/pages/Legal";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -11,6 +13,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/legal"} component={Legal} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -31,7 +34,16 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div className="min-h-screen flex flex-col">
+            <main className="flex-1">
+              <Router />
+            </main>
+            <footer className="border-t border-border bg-background/95">
+              <div className="container py-4">
+                <LegalNotice />
+              </div>
+            </footer>
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
